@@ -6,6 +6,7 @@ export const EquipePage = () => (
     <section>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Nossa Equipe</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Eduardo Paes Card - Spans both columns */}
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-xl">Eduardo Paes</CardTitle>
@@ -18,7 +19,8 @@ export const EquipePage = () => (
           </CardContent>
         </Card>
 
-        <Card>
+        {/* Chicão Bulhões Card - Spans both columns */}
+        <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-xl">Chicão Bulhões</CardTitle>
             <p className="text-sm text-blue-600 font-medium">Secretário de Desenvolvimento Urbano e Econômico</p>
@@ -30,6 +32,7 @@ export const EquipePage = () => (
           </CardContent>
         </Card>
 
+        {/* Marcel Grillo Balassiano Section */}
         <div className="space-y-4">
           <Card>
             <CardHeader>
@@ -61,14 +64,16 @@ export const EquipePage = () => (
                 description: 'Doutoranda em Direito (UFF)'
               },
               {
-                name: 'Tayanne Rodrigues',
-                description: 'Graduanda em Economia (UERJ)'
-              },
-              {
                 name: 'Maíra França',
                 description: 'Doutora em Economia (UFF)'
+              },
+              {
+                name: 'Tayanne Rodrigues',
+                description: 'Graduanda em Economia (UERJ)'
               }
-            ].map((member, index) => (
+            ]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((member, index) => (
               <Card key={index} className="bg-gray-50">
                 <CardHeader className="p-4">
                   <CardTitle className="text-base">{member.name}</CardTitle>
@@ -79,6 +84,7 @@ export const EquipePage = () => (
           </div>
         </div>
 
+        {/* Carina Quirino Section */}
         <div className="space-y-4">
           <Card>
             <CardHeader>
@@ -94,6 +100,10 @@ export const EquipePage = () => (
                 description: 'Mestre em Economia (EPGE/FGV)'
               },
               {
+                name: 'João Donasolo',
+                description: 'Graduando em Ciência de Dados (EMAp/FGV) e Direito (UFRJ)'
+              },
+              {
                 name: 'Kátia Alves',
                 description: 'Doutora em Economia (EPGE/FGV)'
               },
@@ -102,18 +112,16 @@ export const EquipePage = () => (
                 description: 'Pós-graduada em Direito (ESAP/PGE-RJ)'
               },
               {
-                name: 'Theo Garcia',
-                description: 'Mestrando em Economia (EPGE/FGV)'
-              },
-              {
                 name: 'Rafael Wanderley',
                 description: 'Graduado em Direito (UFRJ)'
               },
               {
-                name: 'João Donasolo',
-                description: 'Graduando em Ciência de Dados (EMAp/FGV) e Direito (UFRJ)'
+                name: 'Theo Garcia',
+                description: 'Mestrando em Economia (EPGE/FGV)'
               }
-            ].map((member, index) => (
+            ]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((member, index) => (
               <Card key={index} className="bg-gray-50">
                 <CardHeader className="p-4">
                   <CardTitle className="text-base">{member.name}</CardTitle>

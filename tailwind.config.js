@@ -18,6 +18,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
       },
+      zIndex: {
+        '100': '100',
+        '200': '200',
+        // Add more if needed
+      },
     },
   },
   plugins: [],
