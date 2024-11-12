@@ -49,7 +49,7 @@ export const DockNavigation: React.FC<DockNavigationProps> = ({ activePage, setA
                 className="relative"
               >
                 <button
-                  onClick={() => id !== 'home' && setActivePage(id)}
+                  onClick={() => setActivePage(id)} // Removed the conditional here
                   onMouseEnter={() => setHoveredItem(id)}
                   className={`relative group p-2 rounded-full hover:bg-blue-800 
                     ${isActive ? 'bg-blue-700' : 'hover:bg-blue-800/50'}`}

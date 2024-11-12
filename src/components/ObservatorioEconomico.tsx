@@ -1,19 +1,19 @@
-// File: /src/components/ObservatorioEconomico.tsx
-
 import React, { useState } from 'react';
-import { Mail } from 'lucide-react'; // Ensure Mail icon is imported
+import { Mail } from 'lucide-react';
 import { PublicacoesPage } from './pages/PublicacoesPage';
 import { DadosPage } from './pages/DadosPage';
 import { EquipePage } from './pages/EquipePage';
 import { SobrePage } from './pages/SobrePage';
+import { HomePage } from './pages/HomePage';
 import { DockNavigation } from './DockNavigation';
 
-// Main App Component
 const ObservatorioEconomico = () => {
-  const [activePage, setActivePage] = useState('publicacoes');
+  const [activePage, setActivePage] = useState('home');
 
   const renderPage = () => {
     switch (activePage) {
+      case 'home':
+        return <HomePage setActivePage={setActivePage} />;
       case 'publicacoes':
         return <PublicacoesPage />;
       case 'dados':
@@ -23,7 +23,7 @@ const ObservatorioEconomico = () => {
       case 'sobre':
         return <SobrePage />;
       default:
-        return <PublicacoesPage />;
+        return <HomePage />;
     }
   };
 
@@ -32,23 +32,21 @@ const ObservatorioEconomico = () => {
       {/* Header */}
       <header className="bg-blue-900">
         <div className="w-full flex items-center justify-between px-4 py-4">
-          {/* Logo on the Left - Enlarged by 50% */}
           <div className="flex-shrink-0 overflow-hidden">
             <img
-              src="/assets/logo-left.png" // Path to the left logo
+              src="/assets/logo-left.png"
               alt="Observatório Econômico do Rio Logo"
               className="h-36 w-auto object-contain object-left"
-              loading="lazy" // Lazy loading for performance
+              loading="lazy"
             />
           </div>
 
-          {/* Logo on the Right - Increased by 10% */}
           <div className="flex-shrink-0 overflow-hidden">
             <img
-              src="/assets/logo-right.png" // Path to the right logo
+              src="/assets/logo-right.png"
               alt="Prefeitura do Rio de Janeiro Logo"
               className="h-[4.4rem] w-auto object-contain object-right"
-              loading="lazy" // Lazy loading for performance
+              loading="lazy"
             />
           </div>
         </div>
@@ -62,7 +60,6 @@ const ObservatorioEconomico = () => {
       {/* Footer */}
       <footer className="bg-blue-900">
         <div className="container mx-auto px-4 py-12">
-          {/* Main Footer Content */}
           <div className="max-w-3xl mx-auto">
             <div className="text-center space-y-6">
               <p className="text-blue-100">
@@ -85,7 +82,6 @@ const ObservatorioEconomico = () => {
             </div>
           </div>
 
-          {/* Footer Bottom */}
           <div className="pt-8 border-t border-blue-800 mt-8">
             <p className="text-blue-100 text-sm text-center">
               &copy; 2024 Observatório Econômico do Rio. Todos os direitos reservados.
