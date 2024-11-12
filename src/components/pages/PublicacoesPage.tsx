@@ -101,7 +101,7 @@ export const PublicacoesPage = () => {
         {categories.map((category, index) => (
           <div 
             key={index} 
-            className="group relative bg-white overflow-hidden rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer"
+            className="group relative bg-white overflow-hidden rounded-lg transition-transform duration-300 cursor-pointer hover:scale-105"
             onClick={() => openModal(category.title)}
           >
             <div className="p-6">
@@ -111,17 +111,18 @@ export const PublicacoesPage = () => {
                   {category.title}
                 </h3>
               </div>
-              <p className="text-gray-600 mt-2 text-sm">
-                {category.description}
-              </p>
+              {/* Description that appears on hover */}
+              <div className="mt-4 max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-40 relative z-20">
+                <p className="text-sm text-gray-600">
+                  {category.description}
+                </p>
+              </div>
             </div>
 
-            {/* Hover overlay with description */}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-50/90 via-blue-50/50 to-transparent 
+            {/* Hover overlay with gradient effect */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-50/60 via-blue-50/30 to-transparent 
                           opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-sm text-gray-600">{category.description}</p>
-              </div>
+              {/* If additional overlay content is needed, it can be added here */}
             </div>
           </div>
         ))}
